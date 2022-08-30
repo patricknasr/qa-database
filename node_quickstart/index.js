@@ -14,24 +14,23 @@ function main () {
         name: 'anz',
         category: 'sla',
         content: '6 Days',
-        time: `${date.format(now, 'YYYY-MM-DD--HH-mm-ss')}`
+        time: `${date.format(now, 'YYYY-MM-DD--HH:mm:ss')}`
     });
 
     lender.save()
 
-    Lender.find({ name: 'anz', category: 'sla'})
+    /*Lender.find({ name: 'anz', category: 'sla' })
         .then((result) => {
             console.log(result);
-        })
+        })*/
+    Lender.find({ name: 'cba', time: { $gte: '2022-08-30--00:00:00', $lte: '2022-09-30--00:00:00'} })
+        .then((result) => {
+            console.log(result);
+    })
 }
 
 main();
 
-/*
-Lender.find()
-    .then((result) => {
-        console.log(result);
-    })*/
 
 
 
