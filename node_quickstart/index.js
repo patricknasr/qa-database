@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Lender = require('./blog');
-import date from 'date-and-time';
+const date = require('date-and-time');
 
 const dbURI = "mongodb+srv://patrick_quickli:41xvaXZNXxb9ZTKp@qa-automation.yjasy2g.mongodb.net/qa-automation?retryWrites=true&w=majority";
 
@@ -9,6 +9,7 @@ function main () {
         .then((result) => console.log('connected'))
         .catch((err) => console.log(err))
 
+    const now = new Date();
     const lender = new Lender({
         name: 'anz',
         sla: '2 Days',
