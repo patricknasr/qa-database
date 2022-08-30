@@ -21,8 +21,12 @@ const lenderSchema = new Schema ({
     calc: {
         type: 'string',
         required: false,
+    },
+    time: {
+        type: 'string',
+        required: true,
     }
-}, { timestamps: true });
+});
 
 const Lender = mongoose.model('Lender', lenderSchema);
 module.exports = Lender;
