@@ -6,21 +6,13 @@ const lenderSchema = new Schema ({
         type: 'string',
         required: true,
     },
-    sla: {
+    category: {
         type: 'string',
-        required: false,
+        required: true,
     },
-    policy: {
+    content: {
         type: 'string',
-        required: false,
-    },
-    rates: {
-        type: 'string',
-        required: false,
-    },
-    calc: {
-        type: 'string',
-        required: false,
+        required: true,
     },
     time: {
         type: 'string',

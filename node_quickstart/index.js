@@ -12,11 +12,17 @@ function main () {
     const now = new Date();
     const lender = new Lender({
         name: 'anz',
-        sla: '2 Days',
+        category: 'sla',
+        content: '6 Days',
         time: `${date.format(now, 'YYYY-MM-DD--HH-mm-ss')}`
     });
 
     lender.save()
+
+    Lender.find({ name: 'anz', category: 'sla'})
+        .then((result) => {
+            console.log(result);
+        })
 }
 
 main();
